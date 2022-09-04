@@ -26,6 +26,17 @@ html{
     font-weight: var(--medium);
 }
 
+/* ------- Configuraciones de clases generales (sirven para todas las secciones) ----- */
+
+.botones{
+    background: var(--color_gradiente);
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+
 /* --------------- HEADER --------------- */
 
 header{
@@ -36,6 +47,7 @@ header{
 
 .container_iconos_lista{
     display: flex;
+    gap: 30px;
 }
 
 .container_iconos{
@@ -49,6 +61,7 @@ header{
 .container_login{
     display: flex;
     flex-direction: column;
+    gap: 1px;
 }
 
 .icono_home{
@@ -57,4 +70,35 @@ header{
 
 .icono_home p{
     font-weight: var(--thin);
+}
+
+/* -------------- Main ------------------ */
+/* -------------- Hero ------------------ */
+
+.container_hero{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.container_frase_hero{
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    gap: 7px;
+}
+
+h1{
+    font-size: 70px;
+}
+
+h2{
+    font-size: 60px;
+}
+
+.container_logo_hero img{
+    width: auto;
+    height: 470px;
 }
