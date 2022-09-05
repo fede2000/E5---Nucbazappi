@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap');
 
 :root{
-    --background_color: #252525;
+    --background_color: #131415;
+    --background_color-card: #252525;
     --color_naranja: #FFA400;
     --color_rojo: #FC2933;
     --color_letras: #FFFFFF;
@@ -20,10 +21,12 @@
     color: var(--color_letras);
 }
 
-html{
+body{
     background: var(--background_color);
     font-family: 'montserrat', 'sans-serif';
     font-weight: var(--medium);
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
 /* ------- Configuraciones de clases generales (sirven para todas las secciones) ----- */
@@ -31,74 +34,88 @@ html{
 .botones{
     background: var(--color_gradiente);
     border: none;
-    width: 150px;
-    height: 40px;
+    /* width: 150px; */
+    /* height: 40px; */
     border-radius: 8px;
 }
 
 
-/* --------------- HEADER --------------- */
+/* --------------- INICIA HEADER --------------- */
 
-header{
+.nav{
     display: flex;
+    color: white;
+    width: 90%;
+    margin: 30px auto;
     justify-content: space-between;
-    padding: 20px;
-}
-
-.container_iconos_lista{
+    align-items: center;
+  }
+  
+  .menu{
     display: flex;
-    gap: 30px;
-}
+    gap: 70px;
+  }
 
-.container_iconos{
-    padding: 30px;
-}
-
-.container_iconos li{
-    margin: 5px;
-}
-
-.container_login{
+  .menu li{
+    list-style: none;
+  }
+  .menu li i{
+    color: var(--color_naranja);
+  }
+  
+  .home{
     display: flex;
-    flex-direction: column;
-    gap: 1px;
-}
+    gap: 15px;
+  }
 
-.icono_home{
-    display: flex;
-}
+/* --------------- FINALIZA HEADER --------------- */
 
-.icono_home p{
-    font-weight: var(--thin);
-}
+/* -------------- INICIA MAIN ------------------ */
+/* ---------- Hero ---------- */
 
-/* -------------- Main ------------------ */
-/* -------------- Hero ------------------ */
+main{
+    width: 80%;
+    margin: 0 auto;
+} 
 
 .container_hero{
     display: flex;
-    width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
 }
 
 .container_frase_hero{
-    display: flex;
-    flex-direction: column;
-    margin-right: 200px;
-    gap: 7px;
+    color: #FFFFFF;
 }
 
-h1{
-    font-size: 70px;
+.container_frase_hero h1{
+    font-size: 4.2rem;
 }
 
-h2{
-    font-size: 60px;
+.container_frase_hero h2{
+    font-size: 3.3rem;
+    margin-top: 10px;
+}
+
+.container_frase_hero p{
+    color: rgb(227, 223, 223);
+    font-size: 1.3rem;
+    letter-spacing: .6px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.container_frase_hero input{
+    margin-top: 30px;
+    width: 180px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .container_logo_hero img{
-    width: auto;
-    height: 470px;
+    margin-left: 10%;
 }
+/* ----------finaliza Hero ---------- */ 
+
+
+/* -------------- FINALIZA MAIN ------------------ */
