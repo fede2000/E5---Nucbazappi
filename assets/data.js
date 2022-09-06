@@ -336,3 +336,16 @@ const productsData = [
       cardImg: 'img/bebida-7.jpg',
     },
   ];
+
+  function products(size){
+    let chunk = [];
+    for (let index = 0; index < productsData.length; index += size)
+      chunk.push(productsData.slice(i, i + size));
+    return chunk
+  };
+
+  const allProducts = {
+    productList: products(8),
+    next: 1,
+    limit: products(8).length,
+  }
