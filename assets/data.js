@@ -5,7 +5,7 @@ const productsData = [
       price: 350,
       description: 'Solo para expertos',
       category: 'pizza',
-      cardImg: 'img/pizza-1.png',
+      cardImg: './assets/img/pizza-1.png',
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ const productsData = [
       price: 350,
       description: 'C/jamón crudo',
       category: 'pizza',
-      cardImg: 'img/pizza-2.png',
+      cardImg: './assets/img/pizza-2.png',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const productsData = [
       price: 380,
       description: '¡BASTA!',
       category: 'pizza',
-      cardImg: 'img/pizza-3.png',   
+      cardImg: './assets/img/pizza-3.png',   
     },
 
     {
@@ -30,7 +30,7 @@ const productsData = [
       price: 450,
       description: 'Viene con coca',
       category: 'pizza',
-      cardImg: 'img/pizza-4.png',
+      cardImg: './assets/img/pizza-4.png',
     },
     {
       id: 5,
@@ -38,7 +38,7 @@ const productsData = [
       price: 990,
       description: 'Cuidado que pica',
       category: 'pizza',
-      cardImg: 'img/pizza-5.png',
+      cardImg: './assets/img/pizza-5.png',
     },
     {
       id: 6,
@@ -46,15 +46,15 @@ const productsData = [
       price: 650,
       description: 'En honor al 1',
       category: 'pizza',
-      cardImg: 'img/pizza-6.png',
+      cardImg: './assets/img/pizza-6.png',
     },
     {
       id: 7,
       name: 'Nick gi',
       price: 689,
-      user: 'La que desaparece',
+      description: 'La que desaparece',
       category: 'pizza',
-       cardImg: 'img/pizza-7.png',
+       cardImg: './assets/img/pizza-7.png',
     },
     {
       id: 8,
@@ -62,7 +62,7 @@ const productsData = [
       price: 785,
       description: 'C/longaniza',
       category: 'pizza',
-      cardImg: 'img/pizza-8.jpg',
+      cardImg: './assets/img/pizza-8.jpg',
     },
     {
       id: 9,
@@ -70,14 +70,14 @@ const productsData = [
       price: 450,
       description: "Muzzarella",
       category: 'pizza',
-      cardImg: 'img/pizza-9.jpg' },
+      cardImg: './assets/img/pizza-9.jpg' },
     {
       id: 10,
       name: 'La Napo',
       price: 650,
       description: 'Clasica Napoletana',
       category: 'pizza',
-      cardImg: 'img/pizza-10.jpg',
+      cardImg: './assets/img/pizza-10.jpg',
     },
     {
       id: 11,
@@ -85,7 +85,7 @@ const productsData = [
       price: 450,
       description: 'No falla nunca',
       category: 'pizza',
-      cardImg: 'img/pizza-11.jpg',
+      cardImg: './assets/img/pizza-11.jpg',
     },
     {
       id: 12,
@@ -93,7 +93,7 @@ const productsData = [
       price: 900,
       description: 'Para mas placer',
       category: 'pizza',
-        cardImg: 'img/pizza-12.jpg',
+        cardImg: './assets/img/pizza-12.jpg',
     },
     {
       id: 13,
@@ -101,7 +101,7 @@ const productsData = [
       price: 830,
       description: 'Fugazzeta',
       category: 'pizza',
-      cardImg: 'img/pizza-13.jpg',
+      cardImg: './assets/img/pizza-13.jpg',
     },
     {
       id: 14,
@@ -109,7 +109,7 @@ const productsData = [
       price: 1100,
       description: 'C/rodajas de pepino',
       category: 'burguer',
-      cardImg: 'img/burguer-1.jpg',
+      cardImg: './assets/img/burguer-1.jpg',
     },
     {
       id: 15,
@@ -117,7 +117,7 @@ const productsData = [
       price: 556,
       description: 'Especialidad de la casa',
       category: 'burguer',
-      cardImg: 'img/burguer-2.jpg',
+      cardImg: './assets/img/burguer-2.jpg',
     },
     {
       id: 16,
@@ -125,7 +125,7 @@ const productsData = [
       price: 689,
       description: 'Con un poco de verde',
       category: 'burguer',
-      cardImg: 'img/burguer-3.jpg',
+      cardImg: './assets/img/burguer-3.jpg',
     },
     {
       id: 17,
@@ -133,7 +133,7 @@ const productsData = [
       price: 456,
       description: 'Una bomba',
       category: 'burguer',
-      cardImg: 'img/burguer-4.jpg',
+      cardImg: './assets/img/burguer-4.jpg',
     },
     {
       id: 18,
@@ -141,7 +141,7 @@ const productsData = [
       price: 4.89,
       description: 'No te vas a arrepentir',
       category: 'burguer',
-      cardImg: 'img/burguer-5.jpg',
+      cardImg: './assets/img/burguer-5.jpg',
     },
     {
       id: 19,
@@ -149,7 +149,7 @@ const productsData = [
       price: 900,
       description: 'C/Cebolla caramelizada',
       category: 'fritas',
-      cardImg: 'img/fritas-1.jpg',
+      cardImg: './assets/img/fritas-1.jpg',
     },
     {
       id: 20,
@@ -157,7 +157,7 @@ const productsData = [
       price: 400,
       description: 'C/Cheddar y verdeo',
       category: 'fritas',
-      cardImg: 'img/fritas-2.jpg',
+      cardImg: './assets/img/fritas-2.jpg',
     },
     {
       id: 21,
@@ -165,7 +165,7 @@ const productsData = [
       price: 800,
       description: 'C/Cheddar,verdeo y Bacon',
       category: 'fritas',
-      cardImg: 'img/fritas-3.jpg',
+      cardImg: './assets/img/fritas-3.jpg',
     },
     {
       id: 22,
@@ -173,7 +173,7 @@ const productsData = [
       price: 300,
       description: 'Fritas simples',
       category: 'fritas',
-      cardImg: 'img/fritas-4.jpg',
+      cardImg: './assets/img/fritas-4.jpg',
     },
     {
       id: 23,
@@ -181,7 +181,7 @@ const productsData = [
       price: 600,
       description: 'Fritas c/provenzal',
       category: 'fritas',
-      cardImg: 'img/fritas-5.jpg',
+      cardImg: './assets/img/fritas-5.jpg',
     },
     {
       id: 24,
@@ -189,7 +189,7 @@ const productsData = [
       price: 420,
       description: 'Pizza Para 1',
       category: 'individuales',
-      cardImg: 'img/individual-1.jpg',
+      cardImg: './assets/img/individual-1.jpg',
     },
     {
       id: 25,
@@ -197,7 +197,7 @@ const productsData = [
       price: 250,
       description: 'Pizza primavera P/1',
       category: 'individuales',
-      cardImg: 'img/individual-1.jpg',
+      cardImg: './assets/img/individual-1.jpg',
     },
     {
       id: 26,
@@ -205,7 +205,7 @@ const productsData = [
       price: 271,
       description: 'P/1',
       category: 'individuales',
-      cardImg: 'img/individual-1.jpg',
+      cardImg: './assets/img/individual-1.jpg',
     },
     {
       id: 27,
@@ -213,7 +213,7 @@ const productsData = [
       price: 300,
       description: 'Pizza calabresa p/1',
       category: 'individuales',
-      cardImg: 'img/individual-1.jpg',
+      cardImg: './assets/img/individual-1.jpg',
     },
     {
       id: 28,
@@ -221,7 +221,7 @@ const productsData = [
       price: 600,
       description: 'Para los que estan a dieta',
       category: 'wrap',
-      cardImg: 'img/wrap-1.jpg',
+      cardImg: './assets/img/wrap-1.jpg',
     },
     {
       id: 29,
@@ -229,7 +229,7 @@ const productsData = [
       price: 500,
       description: 'Solo vegetales',
       category: 'burrito',
-       cardImg: 'img/wrap-2.jpg',
+       cardImg: './assets/img/wrap-2.jpg',
     },
     {
       id: 30,
@@ -237,7 +237,7 @@ const productsData = [
       price: 112,
       description: 'Jamon y huevo revuelto',
       category: 'wrap',
-      cardImg: 'img/wrap-3.jpg',
+      cardImg: './assets/img/wrap-3.jpg',
     },
     {
       id: 31,
@@ -245,7 +245,7 @@ const productsData = [
       price: 600,
       description: 'muzza y bacon',
       category: 'wrap',
-       cardImg: 'img/wrap-4.jpg',
+       cardImg: './assets/img/wrap-4.jpg',
     },
     {
       id: 32,
@@ -253,7 +253,7 @@ const productsData = [
       price: 76,
       description: 'Clasico Taco Mexicano',
       category: 'mexican-food',
-      cardImg: 'img/mexico-1.jpg',
+      cardImg: './assets/img/mexico-1.jpg',
     },
     {
       id: 33,
@@ -261,7 +261,7 @@ const productsData = [
       price: 865,
       description: 'Taco Picante',
       category: 'mexican-food',
-      cardImg: 'img/mexico-2.jpg',
+      cardImg: './assets/img/mexico-2.jpg',
     },
     {
       id: 34,
@@ -269,7 +269,7 @@ const productsData = [
       price: 929,
       description: 'Picada de mini tacos',
       category: 'mexican-food',
-        cardImg: 'img/mexico-3.jpg',
+        cardImg: './assets/img/mexico-3.jpg',
     },
     {
       id: 35,
@@ -277,7 +277,7 @@ const productsData = [
       price: 827,
       description: 'De pollo',
       category: 'mexican-food',
-      cardImg: 'img/mexico-4.jpg',
+      cardImg: './assets/img/mexico-4.jpg',
     },
     {
       id: 36,
@@ -285,7 +285,7 @@ const productsData = [
       price: 555,
       description: 'Fernet con coca',
       category: 'bebida',
-      cardImg: 'img/bebida-1.jpg',
+      cardImg: './assets/img/bebida-1.jpg',
     },
     {
       id: 37,
@@ -293,7 +293,7 @@ const productsData = [
       price: 146,
       description: 'Lata 350ml',
       category: 'bebida',
-      cardImg: 'img/bebida-2.jpg',
+      cardImg: './assets/img/bebida-2.jpg',
     },
     {
       id: 38,
@@ -301,7 +301,7 @@ const productsData = [
       price: 5.55,
       description: 'Lata 354ml',
       category: 'bebida',
-      cardImg: 'img/bebida-3.jpg',
+      cardImg: './assets/img/bebida-3.jpg',
     },
     {
       id: 39,
@@ -309,7 +309,7 @@ const productsData = [
       price: 746,
       description: 'Pinta de cerveza artesanal',
       category: 'bebida',
-      cardImg: 'img/bebida-4.jpg',
+      cardImg: './assets/img/bebida-4.jpg',
     },
     {
       id: 40,
@@ -317,7 +317,7 @@ const productsData = [
       price: 5.55,
       description: 'Daikiri de frutilla',
       category: 'bebida',
-      cardImg: 'img/bebida-5.jpg',
+      cardImg: './assets/img/bebida-5.jpg',
     },
     {
       id: 41,
@@ -325,7 +325,7 @@ const productsData = [
       price: 7.46,
       description: 'Gin tonic de lima',
       category: 'bebida',
-      cardImg: 'img/bebida-6.jpg',
+      cardImg: './assets/img/bebida-6.jpg',
     },
     {
       id: 42,
@@ -333,6 +333,6 @@ const productsData = [
       price: 546,
       description: 'C/sprite y limon',
       category: 'bebida',
-      cardImg: 'img/bebida-7.jpg',
+      cardImg: './assets/img/bebida-7.jpg',
     },
   ];
