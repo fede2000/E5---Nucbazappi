@@ -17,11 +17,25 @@
                     <i class="fa-solid fa-house"></i>
                     <p>Home</p>
                 </li>
-                <li class="cart"><i class="fa-solid fa-cart-shopping"></i></li>
                 <li class="user"><i class="fa-solid fa-user"></i></li>
             </ul>
         </nav>
     </head>
+    <!-- <div class="cart-label">
+        <li class="cart"><i class="fa-solid fa-cart-shopping"></i></li>
+        
+    </div>
+    <div class="cart">
+        <h1>Tus pedidos</h1>
+        <div class="cart-container">
+
+        </div>
+        <div class="cart-total">
+            <p>TOTAL</p>
+            <span class="total"></span>
+        </div>
+        <button class="btn-comprar">Comprar</button>
+    </div> -->
 
     <main>
 
@@ -38,8 +52,93 @@
         </div>
 
     </main>
+
+    <section class="section1">
+            <div class="section_recomendation">
+                <h2>Hoy te recomendamos</h2>
+                <div class="products_recomendation--container">
+                    <div class="product_recomendation">
+                        <img src="assets/img/burguer-1.jpg" alt="">
+                        <div class="product_recomendation--description">
+                            <h2>Bennazianna</h2>
+                            <p>La mas completa</p>
+                            <span class="price">$3640</span>
+                        </div>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <h4>Categorias</h4>
+        <div class="category-card">
+        <div class="card-categorie category">
+            <img src="./assets/img/pizzas-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie " data-category="pizzas">Pizzas</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/burger-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie1" data-category="hamburguesas">Hamburguesas</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/papas-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie2" data-category="papas">Napapuki</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/individuales-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie2" data-category="individuales">Individuales</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/buritto-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie" data-category="wraps">Wraps</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/taco-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie3" data-category="mexican-food">Mexican Food</p>
+            <hr>
+        </div>
+        <div class="card-categorie category">
+            <img src="./assets/img/batidos-categorias.png" alt="" class="img-cate">
+            <p class="titulo-categorie" data-category="batidos">Batidukis</p>
+            <hr>
+        </div>
+        </div>
+    </section>
+    <section class="sec3">
+        <h5 class="titulo-cards">Los mas populares</h5>
+        <div class="product-container">
+        <!-- <div class="container-card">
+            <div class="cards">
+                <img src="${cardImg}" alt="" class="img-card">
+                <h1 class="titulo-card1">${name}</h1>
+                <p class="titulo-cardp">${description}</p>
+                <span class="price">$${price}</span>
+                <button class="add-btn"
+                data-id="${id}"
+                data-name="${name}"
+                data-img=""
+                data-price="${price}">Agregar</button>
+            </div>
+        </div> -->
+        </div>
+    </section>
     <footer>
+        <div class="foot">
+            <ul>
+                <li>Terminos de Uso</li>
+                <li>Trabaja con Nosotros</li>
+                <li>Soporte</li>
+            </ul>
+        </div>
 
     </footer>
+    <script src="./assets/data.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 </html>
