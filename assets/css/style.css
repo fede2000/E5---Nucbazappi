@@ -193,6 +193,8 @@ main{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 85%;
+    margin: 30px auto;
 }
 
 .section_recomendation h2{

@@ -277,7 +277,7 @@ const productsData = [
       price: 827,
       description: 'De pollo',
       category: 'mexican-food',
-      cardImg: './assets/img/mexico-4.jpg',
+      cardImg: './assets/img/mexico-4.jpeg',
     },
     {
       id: 36,
