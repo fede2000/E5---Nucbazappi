@@ -7,6 +7,7 @@ const productsRecomendation = document.querySelector(".products_recomendation--c
 const renderProductRecomendation = product => {
     // desestructuramos el objeto
     const{id, name, price, description, cardImg} = product;
+
     return `
     <div class="product_recomendation">
         <img src="${cardImg}">
@@ -43,7 +44,7 @@ const cart = document.querySelector('.cart');
 const cardProduct = document.querySelector('.product-container_card');
 const categorieCard =  document.querySelector('.category-container');
 const listCategory = document.querySelectorAll('.card-categorie');
-const productos = document.querySelector('.product-container');
+const productos = document.querySelector('.product__category--container');
 const loadBtn = document.querySelector('.load-btn');
 
 
@@ -55,15 +56,20 @@ const loadBtn = document.querySelector('.load-btn');
 // ! Render-----------------------------------------------------------------------!
 const renderCard = product => {
     const{ id, name, price, description, cardImg} =  product;
+    
     return`
-    <div class="product_recomendation">
-        <img src="${cardImg}">
-        <div class="product_recomendation--description">
-            <h2>${name}</h2>
-            <p>${description}</p>
-            <span class="price">$${price}</span>
+    <div class="cards">
+        <img src="${cardImg}" alt="" class="img-card">
+        <h2 class="titulo">${name}</h2>
+        <p class="description">${description}</p>
+        <div class="footer-card">
+            <span class="price"><span>$</span>${price}</span>
+            <button class="add-btn"
+            data-id="${id}"
+            data-name="${name}"
+            data-img=""
+            data-price="${price}">Agregar</button>
         </div>
-        <button data-id='${id}' data-name='${name}' data-price='${price} 'data-img='${cardImg}'>Agregar</button>
     </div>
     `
 }
