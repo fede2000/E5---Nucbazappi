@@ -197,7 +197,7 @@ const productsData = [
       price: 250,
       description: 'Pizza primavera P/1',
       category: 'individuales',
-      cardImg: './assets/img/individual-1.jpg',
+      cardImg: './assets/img/individual-2.jpg',
     },
     {
       id: 26,
@@ -205,7 +205,7 @@ const productsData = [
       price: 271,
       description: 'P/1',
       category: 'individuales',
-      cardImg: './assets/img/individual-1.jpg',
+      cardImg: './assets/img/individual-3.jpg',
     },
     {
       id: 27,
@@ -213,7 +213,7 @@ const productsData = [
       price: 300,
       description: 'Pizza calabresa p/1',
       category: 'individuales',
-      cardImg: './assets/img/individual-1.jpg',
+      cardImg: './assets/img/individual-4.png',
     },
     {
       id: 28,
@@ -228,7 +228,7 @@ const productsData = [
       name: 'Burrito Vegan',
       price: 500,
       description: 'Solo vegetales',
-      category: 'burrito',
+      category: 'wrap',
        cardImg: './assets/img/wrap-2.jpg',
     },
     {

@@ -277,7 +277,7 @@ main{
    height: 50px;
    margin-left: 2%;
 }
-.category-card{
+.category-container{
     display: flex;
     flex-direction: row;
     gap:20px;
