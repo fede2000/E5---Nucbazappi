@@ -72,25 +72,22 @@
 
     </main>
 
-    <section class="section1">
-            <div class="section_recomendation">
-                <h2>Hoy te recomendamos</h2>
-                <div class="products_recomendation--container">
-                    <!-- <div class="product_recomendation">
-                        <img src="assets/img/burguer-1.jpg" alt="">
-                        <div class="product_recomendation--description">
-                            <h2>Bennazianna</h2>
-                            <p>La mas completa</p>
-                            <span class="price">$3640</span>
-                        </div>
-                        <button>Agregar</button>
-                    </div> -->
+    <section class="section_container">
+        <h2 class="section_title">Hoy te recomendamos</h2>
+        <div class="products__recomendation--container container-products"> 
+            <!-- <div class="product_recomendation">
+                <img src="assets/img/burguer-1.jpg" alt="">
+                <div class="product_recomendation--description">
+                    <h2>Bennazianna</h2>
+                    <p>La mas completa</p>
+                    <span class="price">$3640</span>
                 </div>
-            </div>
+                <button>Agregar</button>
+            </div> -->
         </div>
     </section>
-    <section class="sec2">
-        <h2>Categorias</h2>
+    <section class="section_container">
+        <h2 class="section_title">Categorias</h2>
         <div class="category-container">
             <div class="card-categorie category" data-category="pizza">
                 <img src="./assets/img/pizzas-categorias.png" alt="" class="img-cate">
@@ -128,7 +125,7 @@
                 <hr>
             </div>
         </div>
-        <div class="product__category--container">
+        <div class="product__category--container container-products">
                 <!-- <div class="cards">
                     <img src="./assets/img/pizza-1.png" alt="" class="img-card">
                     <h2 class="titulo">La Mr. Pit</h2>
@@ -144,30 +141,31 @@
                 </div> -->
         </div>
     </section>
-    <!-- <section class="sec3">
-        <h5 class="titulo-cards">Los mas populares</h5>
-        <div class="product-container">
-        <div class="container-card">
-            <div class="cards">
-                <img src="${cardImg}" alt="" class="img-card">
-                <h1 class="titulo-card1">${name}</h1>
-                <p class="titulo-cardp">${description}</p>
-                <span class="price">$${price}</span>
-                <button class="add-btn"
-                data-id="${id}"
-                data-name="${name}"
-                data-img=""
-                data-price="${price}">Agregar</button>
-            </div>
+    <section class="section_container">
+        <h2 class="section_title">Los mas populares</h2>
+        <div class="product__popular--container container-products">
+            <!-- <div class="cards">
+                <img src="./assets/img/pizza-1.png" alt="" class="img-card">
+                <h2 class="titulo">La Mr. Pit</h2>
+                <p class="description">Solo para expertos</p>
+                <div class="footer-card">
+                    <span class="price"><span>$</span>600</span>
+                    <button class="add-btn"
+                    data-id="${id}"
+                    data-name="${name}"
+                    data-img=""
+                    data-price="${price}">Agregar</button>
+                </div>
+            </div> -->
         </div>
-        </div>
-    </section> -->
+    </section>
     <footer>
-        <!-- <ul>
-            <li>Terminos de Uso</li>
-            <li>Trabaja con Nosotros</li>
-            <li>Soporte</li>
-        </ul -->
+        <ul class="menu-footer">
+            <li class="item-footer">Terminos de Uso</li>
+            <li class="item-footer">Trabaja con Nosotros</li>
+            <li class="item-footer">Soporte</li>
+        </ul>
+        <h2 class="title-footer">Hecho con <i class="fa-sharp fa-solid fa-heart"></i> en <span>NUCBAZAPPI</span></h2>
 
     </footer>
     <script src="./assets/data.js"></script>
