@@ -72,11 +72,6 @@
     margin-right: 4px;
 }
 
-/* categoria activa */
-.active {
-    background:var(--color_naranja);
-  }
-
 
 /* ----------   FINALIZA CLASES GENERALES   ----------*/
 
@@ -271,6 +266,96 @@ main {
     font-size: 18px;
 }
 
+
+
+/* producto del carrito */
+/* .item-handler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .quantity-handler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 400;
+  } */
+/*   
+  .item-quantity {
+ 
+  } */
+ /* boton de restar `producto */
+  /* .down {
+    background: linear-gradient(90deg, rgba(120,57,14,1) 0%, rgba(69,37,4,1) 100%);
+    width: 30px;
+    height: 30px;
+  } */
+
+  /* boton de sumar producto */
+  /* .up {
+    background: linear-gradient(90deg, rgba(255, 166, 1) 0%, #FC2933 100%);
+    width: 30px;
+    height: 30px;
+  } */
+
+
+/* Diseño card del carrito */
+
+/* 
+  
+.product_cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--background_color-card);
+    border-radius: 10px;
+    min-width: 300px;
+    height: 100px;
+    padding: 20px;
+    box-shadow: -1px 9px 34px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 9px 34px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 9px 34px 0px rgba(0,0,0,0.75);
+
+}
+.product_cart img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.product_cart--description {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-card--cart{
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+.description-card--cart{
+    font-weight: .9rem;
+    font-weight: 300;
+    color: #989898;
+    letter-spacing: .5px;
+    margin-top: 10px;
+}
+
+.product_cart--description .price{
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+   */
+
+
 /* finaliza cart */
 /* ------------------ INICIA SECCION DE PRODUCTOS RECOMENDADOS ------------ */
 .products_recomendation--container{
@@ -364,6 +449,12 @@ hr {
     border-radius: 15px;
     border: none;
 }
+
+/* categoria activa */
+.active{
+    background: var(--color_naranja);
+}
+
 /* ------------------ INICIA SECCION DE PRODUCTOS POR CATEGORIA ------------ */
 
 
