@@ -109,10 +109,90 @@ const filterProducts = (e) =>{
     // }
 };
 
+
+// LOGICA PARA EL CARRO //
+
+const cartImg = document.getElementById("cartImg");
+const exitImg = document.getElementById("exit");
+const cartContainer = document.getElementsByClassName(".cart-container")
+
+const showCart = () => {
+    cartImg.addEventListener('click', () =>{
+        cart.classList.toggle("hide");
+    })
+    exitImg.addEventListener('click', ()=>{
+        cart.classList.toggle("hide");
+    })
+}
+
+const renderCartProduct = cartProduct =>{
+    const{ id, name, price, description, cardImg} =  cartProduct;
+
+    return`
+    <div class="cart-item">
+        <img src="${cardImg}" alt="" class="img-card">
+        
+        <div class="item-info">
+            <h3 class="titulo">${name}</h3>
+            <span class="price"> ${price}</span>
+        </div>
+
+        <div class="item-handler">
+            <span class="quantity-handler down" data-id=${id}>-</span>
+            <span class="item-quantity">${quantity}</span>
+            <span class="quantity-handler up" data-id=${id}>+</span>
+        </div>
+
+    </div>
+    `
+
+}
+
+const renderCart = (cartList) => {
+    if(!cartList.length == 0){
+        productsCart.innerHTML = `<p class="empty-msg"> No hay productos en el carrito</p>`;
+        return;
+    } 
+    productsCart.innerHTML = cartList.map(renderCartProduct).join;
+}
+
+
+const addProduct = (e) => {
+    if(!e.target.classList.contains('add-btn')) return;
+    const product = {
+        id : e.target.dataset.id,
+        name : e.target.dataset.name,
+        price: e.target.dataset.price,
+        img: e.target.dataset.img,
+    };
+
+    // Variable contadora para productos repetidos en el carrito
+
+    const existingCartItem = cart.find(item => item.id === product.id);
+
+    if(existingCartItem){
+        cart = cart.map((item) => {
+            return item.id === product.id
+            ? { ... item, quantity: Number(item.quantity) + 1}
+            : item;
+        })
+    } else {
+        cart = [... cart, {... product, quantity : 1}];
+    }
+
+    saveLocalStorage(cart);
+    renderCart(cart);
+    //showTotal(cart);
+    //disableBuyBtn();
+
+}
+
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
     categorieCard.addEventListener('click', filterProducts)
     document.addEventListener('DOMContentLoaded', renderProductsRandom());
+    productos.addEventListener('click', addProduct);
+    showCart();
 };
 init();
 
