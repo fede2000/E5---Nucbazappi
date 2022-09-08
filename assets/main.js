@@ -1,5 +1,17 @@
 // contenedor de productos recomendados
-const productsRecomendation = document.querySelector(".products_recomendation--container")
+const productsRecomendation = document.querySelector(".products__recomendation--container")
+// contenedor de productos por categoria
+const productsCategory = document.querySelector('.product__category--container');
+// contenedor de productos populares
+const productsPopular = document.querySelector('.product__popular--container');
+// carrito
+const cart = document.querySelector('.cart');
+// contenedor de 
+const cardProduct = document.querySelector('.product-container_card');
+const categorieCard =  document.querySelector('.category-container');
+const listCategory = document.querySelectorAll('.card-categorie');
+
+const loadBtn = document.querySelector('.load-btn');
 
 
 
@@ -12,21 +24,21 @@ const renderProductRecomendation = product => {
     <div class="product_recomendation">
         <img src="${cardImg}">
         <div class="product_recomendation--description">
-            <h2>${name}</h2>
-            <p>${description}</p>
-            <span class="price">$${price}</span>
+            <h2 class="title-card">${name}</h2>
+            <p class="description-card">${description}</p>
+            <span class="price"><span class="spacing-price">$</span>${price}</span>
         </div>
-        <button data-id='${id}' data-name='${name}' data-price='${price} 'data-img='${cardImg}'>Agregar</button>
+        <button class="add-btn" data-id='${id}' data-name='${name}' data-price='${price} 'data-img='${cardImg}'>Agregar</button>
     </div>
     `
 }
 
-// Funcion para recomendar productos aleatoriamente
-const renderProductsRandom = () => {
+// Funcion para mostrar productos aleatoriamente
+const renderProductsRandom = (contenedor,cantidad,funcionRender) => {
     // creamos un array para los productos random a promocionar
     productsListRandom = [];
     // ciclo para obtener los numeros-id aleatorios necesarios
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < cantidad; i++) {
         var idRandom = Math.floor(Math.random()*productsData.length)
         // si el idrandom es repetido , volver a calcular hasta que no sea repetido
         while(productsListRandom.includes(productsData[idRandom]) == true){
@@ -36,16 +48,11 @@ const renderProductsRandom = () => {
         productsListRandom.push(productsData[idRandom])
     }
     // pintamos en el html
-    productsRecomendation.innerHTML = productsListRandom.map(renderProductRecomendation).join("")
+    contenedor.innerHTML = productsListRandom.map(funcionRender).join("")
 
 }
 
-const cart = document.querySelector('.cart');
-const cardProduct = document.querySelector('.product-container_card');
-const categorieCard =  document.querySelector('.category-container');
-const listCategory = document.querySelectorAll('.card-categorie');
-const productos = document.querySelector('.product__category--container');
-const loadBtn = document.querySelector('.load-btn');
+
 
 
 // let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -60,10 +67,10 @@ const renderCard = product => {
     return`
     <div class="cards">
         <img src="${cardImg}" alt="" class="img-card">
-        <h2 class="titulo">${name}</h2>
-        <p class="description">${description}</p>
+        <h2 class="title-card">${name}</h2>
+        <p class="description-card">${description}</p>
         <div class="footer-card">
-            <span class="price"><span>$</span>${price}</span>
+            <span class="price"><span class="spacing-price">$</span>${price}</span>
             <button class="add-btn"
             data-id="${id}"
             data-name="${name}"
@@ -73,9 +80,9 @@ const renderCard = product => {
     </div>
     `
 }
-const renderCategory = (category, index) => {
+const renderCategory = (category) => {
     const listaProductos = productsData.filter(p => p.category === category);
-    productos.innerHTML = listaProductos.map(renderCard).join('');
+    productsCategory.innerHTML = listaProductos.map(renderCard).join('');
 };
 
 // * Filtro categoria-------------------------------------------------------------------*
@@ -112,7 +119,8 @@ const filterProducts = (e) =>{
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
     categorieCard.addEventListener('click', filterProducts)
-    document.addEventListener('DOMContentLoaded', renderProductsRandom());
+    document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,3,renderProductRecomendation));
+    document.addEventListener('DOMContentLoaded', renderProductsRandom(productsPopular,8,renderCard));
 };
 init();
 
