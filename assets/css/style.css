@@ -474,13 +474,14 @@ main {
 .product_recomendation {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 15px;
     background-color: var(--background_color-card);
     border-radius: 10px;
-    min-width: 300px;
+    min-width: 410px;
     height: 120px;
     padding: 20px;
+    margin: 0 auto;
 
 }
 
