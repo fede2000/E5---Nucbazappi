@@ -339,7 +339,7 @@ const productsData = [
 
   function products(size){
     let chunk = [];
-    for (let index = 0; index < productsData.length; index += size)
+    for (let i = 0; i < productsData.length; i += size)
       chunk.push(productsData.slice(i, i + size));
     return chunk
   };
