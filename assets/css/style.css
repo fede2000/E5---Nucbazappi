@@ -48,18 +48,24 @@
     margin: 50px auto;
     justify-content: space-between;
 }
-.img1{
+
+.img1 {
     animation: move-vector-img 3s infinite;
 }
-@keyframes move-vector-img{
-    0%{
-        transform: translateY(15px);
-    }50%{
-        transform: translateY(0px);
-    }100%{
+
+@keyframes move-vector-img {
+    0% {
         transform: translateY(15px);
     }
-     
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(15px);
+    }
+
 }
 
 /* configuracion de botones de agregar  */
@@ -73,7 +79,8 @@
     font-family: 'Montserrat';
     cursor: pointer;
 }
-.add-btn:hover{
+
+.add-btn:hover {
     transform: scale(1.1);
 }
 
@@ -115,7 +122,7 @@ body {
     cursor: pointer;
 }
 
-.botones:hover{
+.botones:hover {
     transform: scale(1.1);
 }
 
@@ -254,7 +261,7 @@ main {
     font-weight: 600;
 }
 
-.cart-resume{
+.cart-resume {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -262,21 +269,21 @@ main {
 
 }
 
-.cart-subTotal{
+.cart-subTotal {
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
     font-weight: 300;
 }
 
-.cart-envio{
+.cart-envio {
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
     font-weight: 300;
 }
 
-.cart-resume hr{
+.cart-resume hr {
     height: 1px;
     margin: 10px 0;
     border-radius: 15px;
@@ -314,19 +321,18 @@ main {
 
 
 .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 1; /*Para que quede por encima del resto de las cosas*/
-
-  /*Efecto de Glassmorphismo*/
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  display: none;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background: rgba(37, 37, 37, 0.2);
+    box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
 }
 
 .show-overlay {
@@ -349,13 +355,13 @@ main {
     cursor: pointer;
 }
 
-  .btn-buy:hover{
+.btn-buy:hover {
     transform: scale(1.1);
-  }
+}
 
-  .btn-buy:hover{
+.btn-buy:hover {
     transform: scale(1.1);
-  }
+}
 
 
 
@@ -386,7 +392,7 @@ main {
     width: 30px;
     height: 30px;
     cursor: pointer;
-  }
+}
 
 /* boton de sumar producto */
 .up {
@@ -394,14 +400,15 @@ main {
     width: 30px;
     height: 30px;
     cursor: pointer;
-  }
+}
 
-  .up:hover{
+.up:hover {
     transform: scale(1.1);
-  }
-  .down:hover{
+}
+
+.down:hover {
     transform: scale(1.1);
-  }
+}
 
 
 /* Diseño card del carrito */
@@ -424,9 +431,10 @@ main {
 
 }
 
-.item-product{
+.item-product {
     display: flex;
-    align-items: center; justify-content: center;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -461,7 +469,7 @@ main {
     font-size: 1.1rem;
 }
 
-.btn-buy{
+.btn-buy {
     width: 200px;
     height: 40px;
     margin: 0 auto;
@@ -470,7 +478,7 @@ main {
 
 
 
-  
+
 
 
 /* finaliza cart */
@@ -651,10 +659,12 @@ footer ul {
     color: var(--color_naranja);
     cursor: pointer;
 }
+
 .item-footer2:hover {
     color: var(--color_naranja);
     cursor: pointer;
 }
+
 .item-footer3:hover {
     color: var(--color_naranja);
     cursor: pointer;
