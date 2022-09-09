@@ -221,6 +221,11 @@ main {
     color: var(--color_naranja);
     font-size: 20px;
     width: 30px;
+    transition: all 0.5s;
+}
+
+#exit:hover{
+    color: var(--color_rojo);
 }
 
 .cart {
@@ -338,7 +343,6 @@ main {
 .show-overlay {
     display: block;
 }
-
 
 .disabled {
     background-color: #989898;
