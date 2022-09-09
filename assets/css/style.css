@@ -60,6 +60,9 @@
     font-family: 'Montserrat';
     cursor: pointer;
 }
+.add-btn:hover{
+    transform: scale(1.1);
+}
 
 /* configuracion de precio */
 .price {
