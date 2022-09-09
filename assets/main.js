@@ -67,7 +67,8 @@ const renderCard = product => {
             <button class="add-btn"
             data-id="${id}"
             data-name="${name}"
-            data-img=""
+            data-description="${description}"
+            data-img="${cardImg}"
             data-price="${price}">Agregar</button>
         </div>
     </div>
@@ -114,7 +115,7 @@ const filterProducts = (e) =>{
 
 const cartImg = document.getElementById("cartImg");
 const exitImg = document.getElementById("exit");
-const productsCart = document.getElementsByClassName(".cart-container")
+const productsCart = document.querySelector(".cart-container")
 const total = document.querySelector('.total');
 const buyBtn = document.querySelector('.btn-buy')
 
@@ -133,12 +134,11 @@ const showCart = () => {
     exitImg.addEventListener('click', ()=>{
         cartMenu.classList.toggle("hide");
     })
-    overlay.classList.toggle('show-overlay')
+    // overlay.classList.toggle('show-overlay')
 }
 
 const renderCartProduct = cartProduct =>{
-    const{ id, name, price, description, cardImg} =  cartProduct;
-
+    const{ id, name, price, description, cardImg, quantity} =  cartProduct;
     return`
         <div class="product_cart">
             <img src="${cardImg}" alt="">
@@ -149,7 +149,7 @@ const renderCartProduct = cartProduct =>{
             </div>
             <div class="item-handler">
                 <span class="quantity-handler down" data-id=${id}>-</span>
-                <span class="item-quantity">1</span>
+                <span class="item-quantity">${quantity}</span>
                 <span class="quantity-handler up" data-id=${id}>+</span>
             </div>
         </div> 
@@ -158,17 +158,17 @@ const renderCartProduct = cartProduct =>{
 }
 
 const renderCart = (cartList) => {
-    if(!cartList.length == 0){
+    if(!cartList.length){
         productsCart.innerHTML = `<p class="empty-msg"> No hay productos en el carrito</p>`;
         return;
     } 
-    productsCart.innerHTML = cartList.map(renderCartProduct).join;
+    productsCart.innerHTML = cartList.map(renderCartProduct).join("");
 }
 
 // Suma de productos--------------------------------------------------------------------------------*
 const showTotal = cartList =>{
     total.innerHTML = `${cartList.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
-    .toFixed()}`
+    .toFixed(2)}`
 
 }
 const disableBuyBtn = () =>{
@@ -217,13 +217,16 @@ const disableBuyBtn = () =>{
 
 
 const addProduct = (e) => {
+    console.log("ENTRO EN ADDPRODUCT")
     if(!e.target.classList.contains('add-btn')) return;
     const product = {
         id : e.target.dataset.id,
         name : e.target.dataset.name,
+        description : e.target.dataset.description,
         price: e.target.dataset.price,
-        img: e.target.dataset.img,
+        cardImg: e.target.dataset.img,
     };
+    console.log("PRODUCT",product)
 
 
     // Variable contadora para productos repetidos en el carrito
@@ -254,12 +257,12 @@ const addProduct = (e) => {
 
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
-    categorieCard.addEventListener('click', filterProducts)
+    document.addEventListener('DOMContentLoaded', showTotal(cart));
+    document.addEventListener('DOMContentLoaded', renderCart(cart));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,3,renderProductRecomendation));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsPopular,8,renderCard));
-    cartContainer.addEventListener('click', handleQuantity);
-    // document.addEventListener('DOMContentLoaded', showTotal(cart));
-    // document.addEventListener('DOMContentLoaded', renderCart(cart));
+    categorieCard.addEventListener('click', filterProducts)
+    // productsCart.addEventListener('click', handleQuantity);
     productsCategory.addEventListener('click', addProduct);
     disableBuyBtn();
     showCart();
