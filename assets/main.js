@@ -22,11 +22,13 @@ const renderProductRecomendation = product => {
 
     return `
     <div class="product_recomendation">
-        <img src="${cardImg}">
-        <div class="product_recomendation--description">
-            <h2 class="title-card">${name}</h2>
-            <p class="description-card">${description}</p>
-            <span class="price"><span class="spacing-price">$</span>${price}</span>
+        <div class="item-product">
+            <img src="${cardImg}" alt="">
+            <div class="product_cart--description">
+                <h2 class="title-card--cart">${name}</h2>
+                <p class="description-card--cart">${description}</p>
+                <span class="price"><span class="spacing-price">$</span>${price}</span>
+            </div>
         </div>
         <button class="add-btn" 
         data-id='${id}' 
