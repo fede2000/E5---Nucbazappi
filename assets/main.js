@@ -5,7 +5,7 @@ const productsCategory = document.querySelector('.product__category--container')
 // contenedor de productos populares
 const productsPopular = document.querySelector('.product__popular--container');
 // carrito
-const cart = document.querySelector('.cart');
+const cartMenu = document.querySelector('.cart');
 // contenedor de 
 const cardProduct = document.querySelector('.product-container_card');
 const categorieCard =  document.querySelector('.category-container');
@@ -52,13 +52,6 @@ const renderProductsRandom = (contenedor,cantidad,funcionRender) => {
 
 }
 
-
-
-
-// let cart = JSON.parse(localStorage.getItem('cart')) || [];
-// const saveLocalStorage = (cartList) => {
-//     localStorage.setItem('cart', JSON.stringify(cartList))
-// }
 
 // ! Render-----------------------------------------------------------------------!
 const renderCard = product => {
@@ -121,16 +114,24 @@ const filterProducts = (e) =>{
 
 const cartImg = document.getElementById("cartImg");
 const exitImg = document.getElementById("exit");
-const cartContainer = document.getElementsByClassName(".cart-container")
+const productsCart = document.getElementsByClassName(".cart-container")
 const total = document.querySelector('.total');
 const buyBtn = document.querySelector('.btn-buy')
 
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const saveLocalStorage = cartList => {
+  localStorage.setItem('cart', JSON.stringify(cartList));
+};
+
+
+
 const showCart = () => {
     cartImg.addEventListener('click', () =>{
-        cart.classList.toggle("hide");
+        cartMenu.classList.toggle("hide");
     })
     exitImg.addEventListener('click', ()=>{
-        cart.classList.toggle("hide");
+        cartMenu.classList.toggle("hide");
     })
     overlay.classList.toggle('show-overlay')
 }
