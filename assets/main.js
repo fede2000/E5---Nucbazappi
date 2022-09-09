@@ -122,6 +122,8 @@ const filterProducts = (e) =>{
 const cartImg = document.getElementById("cartImg");
 const exitImg = document.getElementById("exit");
 const cartContainer = document.getElementsByClassName(".cart-container")
+const total = document.querySelector('.total');
+const buyBtn = document.querySelector('.btn-buy')
 
 const showCart = () => {
     cartImg.addEventListener('click', () =>{
@@ -130,6 +132,7 @@ const showCart = () => {
     exitImg.addEventListener('click', ()=>{
         cart.classList.toggle("hide");
     })
+    overlay.classList.toggle('show-overlay')
 }
 
 const renderCartProduct = cartProduct =>{
@@ -163,6 +166,21 @@ const renderCart = (cartList) => {
     productsCart.innerHTML = cartList.map(renderCartProduct).join;
 }
 
+// Suma de productos--------------------------------------------------------------------------------*
+const showTotal = cartList =>{
+    total.innerHTML = `${cartList.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
+    .toFixed()}`
+
+}
+const disableBuyBtn = () =>{
+    if (!cart.length) {
+        buyBtn.classList.add('disabled')
+    } else{
+        buyBtn.classList.remove('disabled')
+    }
+}
+// ---------------------------------------------------------------------------------------------------*
+
 
 const addProduct = (e) => {
     if(!e.target.classList.contains('add-btn')) return;
@@ -172,6 +190,7 @@ const addProduct = (e) => {
         price: e.target.dataset.price,
         img: e.target.dataset.img,
     };
+
 
     // Variable contadora para productos repetidos en el carrito
 
@@ -189,18 +208,26 @@ const addProduct = (e) => {
 
     saveLocalStorage(cart);
     renderCart(cart);
-    //showTotal(cart);
-    //disableBuyBtn();
+    showTotal(cart);
+    disableBuyBtn();
 
 }
+
+// Menu ------------------------------------------------------------------------------
+
+
+
 
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
     categorieCard.addEventListener('click', filterProducts)
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,3,renderProductRecomendation));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsPopular,8,renderCard));
+    // document.addEventListener('DOMContentLoaded', showTotal(cart));
+    // document.addEventListener('DOMContentLoaded', renderCart(cart));
     productsCategory.addEventListener('click', addProduct);
     showCart();
+    // menuBars.addEventListener('click', toggleMenu);
 };
 init();
 

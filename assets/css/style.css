@@ -270,6 +270,39 @@ main {
     font-weight: 400;
     font-size: 18px;
 }
+.show-menu {
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+  }
+.show-overlay {
+    display: block;
+  }
+.overlay {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+  }
+  .disabled {
+    background-color: #989898;
+    color: white;
+    cursor: not-allowed;
+  }
+  .btn-buy{
+    height: 30px;
+    font-size: 18px;
+    background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+  }
 
 /* finaliza cart */
 /* ------------------ INICIA SECCION DE PRODUCTOS RECOMENDADOS ------------ */
