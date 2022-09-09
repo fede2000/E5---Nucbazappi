@@ -233,7 +233,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: calc(100vh - 65px);
+    /* *height: calc(100vh - 65px); */
+    height: 100vh;
     overflow-y: scroll;
     z-index: 2;
     min-width: 375px;
@@ -249,6 +250,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 
 .cart::-webkit-scrollbar {
@@ -388,7 +390,7 @@ main {
   } */
 /* boton de restar `producto */
 .down {
-    background: linear-gradient(90deg, rgba(120, 57, 14, 1) 0%, rgba(69, 37, 4, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 166, 1) 0%, #FC2933 100%);
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -784,11 +786,16 @@ footer ul {
         width: 300px;
         margin-bottom: 50px;
     }
-
+    
 }
 
 @media(max-width:470px){
-
+    .title-card--cart{
+       width: 150px;
+    }
+    .price{
+       width: 180px;
+    }
     .container_frase_hero h1 {
         font-size: 3rem;
         margin: 0 auto;
