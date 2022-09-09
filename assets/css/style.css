@@ -794,11 +794,22 @@ footer ul {
 }
 
 @media(max-width:470px){
-    .title-card--cart{
+    /* .title-card--cart{
        width: 150px;
     }
     .price{
        width: 180px;
+    } */
+    .product_cart{
+        width: 100px;
+    }
+    .item-handler{
+        width: 70px;
+        
+    }
+    .quantity-handler {
+        height: 20px;
+        width: 20px;
     }
     .container_frase_hero h1 {
         font-size: 3rem;
