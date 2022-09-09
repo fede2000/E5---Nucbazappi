@@ -48,6 +48,19 @@
     margin: 50px auto;
     justify-content: space-between;
 }
+.img1{
+    animation: move-vector-img 3s infinite;
+}
+@keyframes move-vector-img{
+    0%{
+        transform: translateY(15px);
+    }50%{
+        transform: translateY(0px);
+    }100%{
+        transform: translateY(15px);
+    }
+     
+}
 
 /* configuracion de botones de agregar  */
 .add-btn {
