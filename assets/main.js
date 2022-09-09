@@ -139,21 +139,19 @@ const renderCartProduct = cartProduct =>{
     const{ id, name, price, description, cardImg} =  cartProduct;
 
     return`
-    <div class="cart-item">
-        <img src="${cardImg}" alt="" class="img-card">
-        
-        <div class="item-info">
-            <h3 class="titulo">${name}</h3>
-            <span class="price"> ${price}</span>
-        </div>
-
-        <div class="item-handler">
-            <span class="quantity-handler down" data-id=${id}>-</span>
-            <span class="item-quantity">${quantity}</span>
-            <span class="quantity-handler up" data-id=${id}>+</span>
-        </div>
-
-    </div>
+        <div class="product_cart">
+            <img src="${cardImg}" alt="">
+            <div class="product_cart--description">
+                <h2 class="title-card--cart">${name}</h2>
+                <p class="description-card--cart">${description}</p>
+                <span class="price"><span class="spacing-price">$</span>${price}</span>
+            </div>
+            <div class="item-handler">
+                <span class="quantity-handler down" data-id=${id}>-</span>
+                <span class="item-quantity">1</span>
+                <span class="quantity-handler up" data-id=${id}>+</span>
+            </div>
+        </div> 
     `
 
 }
