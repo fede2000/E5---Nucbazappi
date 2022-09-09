@@ -177,6 +177,41 @@ const disableBuyBtn = () =>{
         buyBtn.classList.remove('disabled')
     }
 }
+// ! funcion de suma-------------------------------------!
+ const handleQuantity = e =>{
+    // ! funcion down
+     if (e.target.classList.contains('down')) {
+        const existingCartItem = cart.find(item => item.dataset.id === e.target.dataset.id);
+        if(existingCartItem.quantity === 1){
+            if(window.confirm('¿ Desea eliminar el producto seleccionado ?')){
+                cart = cart.filter(prod => prod.id !== existingCartItem.id);
+                saveLocalStorage(cart);
+                renderCart(cart);
+                showTotal(cart);
+                disableBuyBtn();
+                return
+            }
+        }
+        cart = cart.map((item) =>{
+            return item.id === existingCartItem.id
+            ? {... item, quantity: Number(item.quantity) - 1}
+            : item;
+        });
+        // ! funcion up
+     } else if (e.target.classList.contains('up')){
+        const existingCartItem = cart.find(item => item.dataset.id === e.target.dataset.id);
+        cart = cart.map((item) =>{
+            return item.id === existingCartItem.id
+            ? {... item, quantity: Number(item.quantity) + 1}
+            : item;
+        });
+     }
+        saveLocalStorage(cart);
+        renderCart(cart);
+        showTotal(cart);
+        disableBuyBtn();
+ }
+// !------------------------------------------------------------!
 // ---------------------------------------------------------------------------------------------------*
 
 
@@ -221,9 +256,11 @@ const init = () =>{
     categorieCard.addEventListener('click', filterProducts)
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,3,renderProductRecomendation));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsPopular,8,renderCard));
+    cartContainer.addEventListener('click', handleQuantity);
     // document.addEventListener('DOMContentLoaded', showTotal(cart));
     // document.addEventListener('DOMContentLoaded', renderCart(cart));
     productsCategory.addEventListener('click', addProduct);
+    disableBuyBtn();
     showCart();
     // menuBars.addEventListener('click', toggleMenu);
 };
