@@ -118,6 +118,7 @@ const exitImg = document.getElementById("exit");
 const productsCart = document.querySelector(".cart-container");
 const total = document.querySelector('.total');
 const buyBtn = document.querySelector('.btn-buy');
+const overlay = document.querySelector('.overlay');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -136,11 +137,13 @@ const completeBuy = () => {
 const showCart = () => {
     cartImg.addEventListener('click', () =>{
         cartMenu.classList.toggle("hide");
+        overlay.classList.toggle('show-overlay')
     })
     exitImg.addEventListener('click', ()=>{
         cartMenu.classList.toggle("hide");
+        overlay.classList.remove('show-overlay')
     })
-    // overlay.classList.toggle('show-overlay')
+    
 }
 
 const renderCartProduct = cartProduct =>{
@@ -253,7 +256,6 @@ const addProduct = (e) => {
     renderCart(cart);
     showTotal(cart);
     disableBuyBtn();
-
 }
 
 // Menu ------------------------------------------------------------------------------
