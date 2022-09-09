@@ -28,7 +28,12 @@ const renderProductRecomendation = product => {
             <p class="description-card">${description}</p>
             <span class="price"><span class="spacing-price">$</span>${price}</span>
         </div>
-        <button class="add-btn" data-id='${id}' data-name='${name}' data-price='${price} 'data-img='${cardImg}'>Agregar</button>
+        <button class="add-btn" 
+        data-id='${id}' 
+        data-name='${name}' 
+        data-description='${description}'
+        data-price='${price} 
+        'data-img='${cardImg}'>Agregar</button>
     </div>
     `
 }
@@ -117,6 +122,7 @@ const cartImg = document.getElementById("cartImg");
 const exitImg = document.getElementById("exit");
 const productsCart = document.querySelector(".cart-container")
 const total = document.querySelector('.total');
+const subTotal = document.querySelector('.sub')
 const buyBtn = document.querySelector('.btn-buy')
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -141,11 +147,13 @@ const renderCartProduct = cartProduct =>{
     const{ id, name, price, description, cardImg, quantity} =  cartProduct;
     return`
         <div class="product_cart">
-            <img src="${cardImg}" alt="">
-            <div class="product_cart--description">
-                <h2 class="title-card--cart">${name}</h2>
-                <p class="description-card--cart">${description}</p>
-                <span class="price"><span class="spacing-price">$</span>${price}</span>
+            <div class="item-product">
+                <img src="${cardImg}" alt="">
+                <div class="product_cart--description">
+                    <h2 class="title-card--cart">${name}</h2>
+                    <p class="description-card--cart">${description}</p>
+                    <span class="price"><span class="spacing-price">$</span>${price}</span>
+                </div>
             </div>
             <div class="item-handler">
                 <span class="quantity-handler down" data-id=${id}>-</span>
@@ -167,9 +175,12 @@ const renderCart = (cartList) => {
 
 // Suma de productos--------------------------------------------------------------------------------*
 const showTotal = cartList =>{
-    total.innerHTML = `${cartList.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
-    .toFixed(2)}`
-
+    total.innerHTML = `$ ${cartList.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
+    }`;
+}
+const showSub = cartList =>{
+    subTotal.innerHTML = `$ ${cartList.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
+    }`;
 }
 const disableBuyBtn = () =>{
     if (!cart.length) {
@@ -182,12 +193,13 @@ const disableBuyBtn = () =>{
  const handleQuantity = e =>{
     // ! funcion down
      if (e.target.classList.contains('down')) {
-        const existingCartItem = cart.find(item => item.dataset.id === e.target.dataset.id);
+        const existingCartItem = cart.find(item => item.id === e.target.dataset.id);
         if(existingCartItem.quantity === 1){
             if(window.confirm('¿ Desea eliminar el producto seleccionado ?')){
                 cart = cart.filter(prod => prod.id !== existingCartItem.id);
                 saveLocalStorage(cart);
                 renderCart(cart);
+                showSub(cart);
                 showTotal(cart);
                 disableBuyBtn();
                 return
@@ -200,7 +212,7 @@ const disableBuyBtn = () =>{
         });
         // ! funcion up
      } else if (e.target.classList.contains('up')){
-        const existingCartItem = cart.find(item => item.dataset.id === e.target.dataset.id);
+        const existingCartItem = cart.find(item => item.id === e.target.dataset.id);
         cart = cart.map((item) =>{
             return item.id === existingCartItem.id
             ? {... item, quantity: Number(item.quantity) + 1}
@@ -209,6 +221,7 @@ const disableBuyBtn = () =>{
      }
         saveLocalStorage(cart);
         renderCart(cart);
+        showSub(cart);
         showTotal(cart);
         disableBuyBtn();
  }
@@ -217,7 +230,6 @@ const disableBuyBtn = () =>{
 
 
 const addProduct = (e) => {
-    console.log("ENTRO EN ADDPRODUCT")
     if(!e.target.classList.contains('add-btn')) return;
     const product = {
         id : e.target.dataset.id,
@@ -226,10 +238,7 @@ const addProduct = (e) => {
         price: e.target.dataset.price,
         cardImg: e.target.dataset.img,
     };
-    console.log("PRODUCT",product)
-
-
-    // Variable contadora para productos repetidos en el carrito
+    // Variabl contadora para productos repetidos en el carrito
 
     const existingCartItem = cart.find(item => item.id === product.id);
 
@@ -245,6 +254,7 @@ const addProduct = (e) => {
 
     saveLocalStorage(cart);
     renderCart(cart);
+    showSub(cart);
     showTotal(cart);
     disableBuyBtn();
 
@@ -258,12 +268,15 @@ const addProduct = (e) => {
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
     document.addEventListener('DOMContentLoaded', showTotal(cart));
+    document.addEventListener('DOMContentLoaded', showSub(cart));
     document.addEventListener('DOMContentLoaded', renderCart(cart));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,3,renderProductRecomendation));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsPopular,8,renderCard));
     categorieCard.addEventListener('click', filterProducts)
-    // productsCart.addEventListener('click', handleQuantity);
+    productsCart.addEventListener('click', handleQuantity);
     productsCategory.addEventListener('click', addProduct);
+    productsRecomendation.addEventListener('click',addProduct)
+    productsPopular.addEventListener('click',addProduct)
     disableBuyBtn();
     showCart();
     // menuBars.addEventListener('click', toggleMenu);
