@@ -115,9 +115,9 @@ const filterProducts = (e) =>{
 
 const cartImg = document.getElementById("cartImg");
 const exitImg = document.getElementById("exit");
-const productsCart = document.querySelector(".cart-container")
+const productsCart = document.querySelector(".cart-container");
 const total = document.querySelector('.total');
-const buyBtn = document.querySelector('.btn-buy')
+const buyBtn = document.querySelector('.btn-buy');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -125,7 +125,13 @@ const saveLocalStorage = cartList => {
   localStorage.setItem('cart', JSON.stringify(cartList));
 };
 
-
+const completeBuy = () => {
+    if (!cart.length) return;
+    if (window.confirm('¿Desea finalizar su compra?')) {
+        localStorage.removeItem('cart');
+        window.location.reload();
+    }
+};
 
 const showCart = () => {
     cartImg.addEventListener('click', () =>{
@@ -253,8 +259,6 @@ const addProduct = (e) => {
 // Menu ------------------------------------------------------------------------------
 
 
-
-
 const init = () =>{
     document.addEventListener('DOMContentLoaded', renderCategory);
     document.addEventListener('DOMContentLoaded', showTotal(cart));
@@ -266,6 +270,7 @@ const init = () =>{
     productsCategory.addEventListener('click', addProduct);
     disableBuyBtn();
     showCart();
+    buyBtn.addEventListener('click', completeBuy);
     // menuBars.addEventListener('click', toggleMenu);
 };
 init();
